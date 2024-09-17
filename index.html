@@ -19,17 +19,18 @@
             transition: width 0.3s;
         }
         .memo {
-            width: 90%;
-            height: 100vh;
+            width: 90%; /* 全画面表示から90%に変更 */
+            height: 90vh;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.9);
             position: fixed;
-            top: 0;
-            right: 0;
+            top: 5vh;
+            right: 5%;
             overflow-y: auto;
             z-index: 10;
             display: none;
             box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
         }
         .toggle-button {
             position: fixed;
@@ -114,9 +115,9 @@
         </div>
     </div>
 
-    <button class="toggle-button" onclick="toggleMemo()">料金表開く</button>
+    <button class="toggle-button" onclick="toggleMemo()">料金表を開く</button>
 
-    <div class="memo>
+    <div class="memo">
         <p><strong>【指名料】</strong><br>
         役職 : 5,000円<br>
         非役職 : 3,000円</p>
