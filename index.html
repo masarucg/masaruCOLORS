@@ -12,19 +12,37 @@
             background-color: #f7f7f7;
             display: flex;
             justify-content: space-between;
+            position: relative;
         }
         .container {
             width: 70%;
+            transition: width 0.3s;
         }
         .memo {
-            width: 25%;
-            padding: 15px;
-            border-left: 2px solid #ccc;
-            background-color: #fff;
-            position: sticky;
+            width: 100%;
+            height: 100vh;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            position: fixed;
+            top: 0;
+            right: 0;
+            overflow-y: auto;
+            z-index: 10;
+            display: none;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+        .toggle-button {
+            position: fixed;
             top: 20px;
-            font-size: 14px;
-            line-height: 1.5;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            z-index: 11;
+            transition: transform 0.3s;
         }
         h1 {
             font-size: 24px;
@@ -66,6 +84,20 @@
             let total2 = Math.ceil(total1 * 1.43 / 1000) * 1000;
             document.getElementById("total2").innerText = total2;
         }
+
+        function toggleMemo() {
+            const memo = document.querySelector('.memo');
+            const button = document.querySelector('.toggle-button');
+            if (memo.style.display === 'none' || memo.style.display === '') {
+                memo.style.display = 'block';
+                button.textContent = 'メモを閉じる';
+                button.style.transform = 'scale(0.8)';
+            } else {
+                memo.style.display = 'none';
+                button.textContent = 'メモを開く';
+                button.style.transform = 'scale(1)';
+            }
+        }
     </script>
 </head>
 <body>
@@ -81,6 +113,8 @@
             <p>2. 総合計: <span id="total2">0</span> 円</p>
         </div>
     </div>
+
+    <button class="toggle-button" onclick="toggleMemo()">メモを開く</button>
 
     <div class="memo">
         <p><strong>【指名料】</strong><br>
