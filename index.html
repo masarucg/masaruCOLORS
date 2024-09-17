@@ -19,7 +19,7 @@
             transition: width 0.3s;
         }
         .memo {
-            width: 100%;
+            width: 90%;
             height: 100vh;
             padding: 20px;
             background-color: rgba(255, 255, 255, 0.9);
@@ -90,11 +90,11 @@
             const button = document.querySelector('.toggle-button');
             if (memo.style.display === 'none' || memo.style.display === '') {
                 memo.style.display = 'block';
-                button.textContent = 'メモを閉じる';
+                button.textContent = '料金表を閉じる';
                 button.style.transform = 'scale(0.8)';
             } else {
                 memo.style.display = 'none';
-                button.textContent = 'メモを開く';
+                button.textContent = '料金表を開く';
                 button.style.transform = 'scale(1)';
             }
         }
@@ -114,9 +114,9 @@
         </div>
     </div>
 
-    <button class="toggle-button" onclick="toggleMemo()">メモを開く</button>
+    <button class="toggle-button" onclick="toggleMemo()">料金表開く</button>
 
-    <div class="memo">
+    <div class="memo>
         <p><strong>【指名料】</strong><br>
         役職 : 5,000円<br>
         非役職 : 3,000円</p>
